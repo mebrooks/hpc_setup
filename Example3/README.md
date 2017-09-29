@@ -26,14 +26,27 @@ number of cores that are used by the parallel job:
 MC_CORES=2 submit "make -j2"
 ```
 
+Here the command `make -j2` is submitted as a single job hence we must
+reserve the number of required cores for the job by passing `MC_CORES`
+to `submit`.
+
 ## Submit via the `qmake` command
 
 To take full advantage of all HPC nodes we can submit using
 `qmake`. This is only relevant when using *many* cores:
 
 ```shell
-submit "qmake -j2"
+submit "qmake -j50"
 ```
 
-**Note** `qmake` spawns job submissions hence we do not need to
-  request the number of cores.
+The `-j50` tells `qmake` to put no more than `50` simultaneous jobs in
+the queue. Job reservations are made on demand hence using a high
+value of `-j` does not waste resources. We do not need to explicitly
+request the number of cores.
+
+**Note** The targets may benefit from a parallel BLAS or extra cores
+  (as in [Example 1](../Example1) and [Example 2](../Example2)). These
+  resources can be requested from the `Makefile` by putting
+  e.g. `export OMP_NUM_THREADS=8` at the top. Reservations are
+  automatically adjusted. However, note that the extra requested
+  resources will apply to *all* targets.
