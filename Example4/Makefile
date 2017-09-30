@@ -18,7 +18,7 @@ RUN_MODEL = cd $(MODEL_FOLDER); SCRIPT_INPUT="{$(PARMS); OUTFILE='../$@'}" R --s
 ## Build the model
 MODEL_SRC = $(MODEL_FOLDER)/model.cpp
 MODEL_BIN = $(MODEL_FOLDER)/model.so
-$(MODEL_BIN) : $(MODEL_SRC)
+$(MODEL_BIN) : $(MODEL_FOLDER) $(MODEL_SRC)
 	echo "TMB:::compile('$(MODEL_SRC)', '-Ofast')" | R --slave
 
 ## Target 1
