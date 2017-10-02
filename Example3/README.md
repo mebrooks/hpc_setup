@@ -47,6 +47,7 @@ request the number of cores.
 **Note** The targets may benefit from a parallel BLAS or extra cores
   (as in [Example 1](../Example1) and [Example 2](../Example2)). These
   resources can be requested from the `Makefile` by putting
-  e.g. `export OMP_NUM_THREADS=8` at the top. Reservations are
-  automatically adjusted. However, note that the extra requested
-  resources will apply to *all* targets.
+  e.g. `export OMP_NUM_THREADS=8` at the top, see
+  [Example 4](../Example4)). Reservations are automatically
+  adjusted. However, note that the extra requested resources will
+  apply to *all* targets.

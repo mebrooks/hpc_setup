@@ -60,3 +60,4 @@ command. We'll see some examples in the following.
 * [Example 1](Example1) Speeding up a single model using the parallel BLAS.
 * [Example 2](Example2) Speeding up residuals using the R package `parallel`.
 * [Example 3](Example3) Submitting Makefiles to the queue: A toy example.
+* [Example 4](Example4) Submitting Makefiles to the queue: A real example.
