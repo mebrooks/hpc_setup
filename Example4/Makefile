@@ -2,7 +2,7 @@
 export OMP_NUM_THREADS=8
 
 ## Targets
-all: results/cod-Q4.RData results/cod-Q1.RData
+results: $(shell grep '^results/.*:' Makefile | sed s/:.*//g)
 
 ## Get model
 MODEL_FOLDER = length_based_index
