@@ -32,3 +32,9 @@ PARMS = { SPECIES=$(COD); QUARTER=1 }
 results/cod-Q1.RData: $(MODEL_BIN)
 	mkdir -p results
 	$(RUN_MODEL)
+
+## Optional: Send mail when done + link to results
+publish: results
+	echo "Copy result files here..." > ~/public_html/results.txt
+	chmod 755 ~/public_html/results.txt
+	echo "Results are at www.student.dtu.dk/~"$$USER | mail -s "Results have been updated" $$USER@dtu.dk
