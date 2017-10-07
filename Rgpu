@@ -1,0 +1,3 @@
+#!/bin/sh
+module load cuda/7.5
+LD_PRELOAD=libnvblas.so R $*
