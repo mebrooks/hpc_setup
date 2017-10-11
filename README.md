@@ -2,6 +2,24 @@
 
 Setup R and relevant packages for a DTU HPC account ( http://www.hpc.dtu.dk ) .
 
+### Warning
+
+By default
+[everybody are granted access to read your files (!)](http://gbar.dtu.dk/faq/49-permissions).
+This is unfortunate when working with confidential data. To fix:
+
+```shell
+chmod go-rwx ~
+```
+
+Check that
+
+```shell
+ls -ld ~
+```
+
+Permissions should be `drwx------`.
+
 ### Get Started
 
 Login to your account
