@@ -30,6 +30,7 @@ echo "
 #PBS -l nodes=1:ppn=$(( $OMP_NUM_THREADS * $MC_CORES ))
 #PBS -m $NOTIFICATION
 #PBS -q $QUEUE
+#PBS -V
 
 # -- run in the current working (submission) directory --
 # cd $PBS_O_WORKDIR <--- didn't work !
