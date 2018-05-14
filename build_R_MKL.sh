@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=3.4.1
+VERSION=3.5.0
 RVERSION=R-$VERSION
 TARBALL=$RVERSION.tar.gz
 
@@ -29,4 +29,5 @@ mkdir -p build
 cd build
 ../$RVERSION/configure CPPFLAGS="-I$INCLUDES -I/usr/local/include" LDFLAGS="-L$LIBS -L/usr/local/lib64" --with-blas="$MKL" --with-lapack
 
+make clean
 make
