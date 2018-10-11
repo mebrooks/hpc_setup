@@ -1,6 +1,6 @@
 #!/bin/sh
 
-JOB_ID=`qstat | tail -n 1 | sed s/\ .*//g`
+JOB_ID=`qstat | grep " R " | tail -n 1 | sed s/\ .*//g`
 
 echo $JOB_ID
 
